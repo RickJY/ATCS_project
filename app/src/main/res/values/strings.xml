@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="Studentname">JinYu</string>
+    <string name="StudentID">S1036999</string>
+    <string name="ClickTXT">Submit</string>
+    <string name="please_select">Please select one option first!</string>
+    <string name="welcome">This is our Cover_page</string>
+    <string name="page1_2">Next_page</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sportpro">Sport pro</string>
+    <string name="go_to_better_page">Go to Better Page</string>
+    <string name="get_me">Get me</string>
+    <string name="describe">Describe</string>
+    <string-array name="option_toasts">
+        <item>You choose the (10635 Shirt),(Yonex),($95)</item>
+        <item>You choose the (Pegasus 41),(Nike),($219)</item>
+        <item>You choose the (Air Jordan 1 Low),(Nike),($189)</item>
+        <item>You choose the (Downshifter 13),(Nike),($99)</item>
+        <item>You choose the (Supernova Stride 2),(Adidas),($149)</item>
+        <item>You choose the (Copa 11Pure Firm Ground Boots),(Adidas),($349)</item>
+        <item>You choose the (Badminton Racquet Nanoflare 002),(Yonex),($80)</item>
+        <item>You choose the (Aero Sensor 200),(Yonex),($74)</item>
+        <item>You choose the (UEFA Champions League Competition),(Adidas),($89)</item>
+        <item>You choose the (Jordan Championship),(Nike),($75)</item>
+    </string-array>
+</resources>
