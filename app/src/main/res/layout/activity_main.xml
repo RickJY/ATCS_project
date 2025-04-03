@@ -50,6 +50,20 @@
         android:padding="12dp"/>
 
     <Button
+        android:id="@+id/googleSignInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_with_google"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_google_logo"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        android:gravity="center"
+        android:minHeight="48dp"/>
+
+    <Button
         android:id="@+id/guestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

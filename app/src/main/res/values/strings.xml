@@ -14,6 +14,7 @@
     <string name="go_to_better_page">Go to Better Page</string>
     <string name="get_me">Get me</string>
     <string name="describe">Describe</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
     <string-array name="option_toasts">
         <item>You choose the (10635 Shirt),(Yonex),($95)</item>
         <item>You choose the (Pegasus 41),(Nike),($219)</item>

@@ -36,10 +36,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-
-    // 添加 Google Play Services Auth 库来启用 Google 登录
-    implementation(libs.play.services.auth)
-
+    implementation("androidx.credentials:credentials:1.5.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.5.0>")
+    implementation ("com.google.android.gms:play-services-auth:21.3.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
