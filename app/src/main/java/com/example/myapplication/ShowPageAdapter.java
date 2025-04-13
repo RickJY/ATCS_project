@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +9,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShowPageAdapter extends RecyclerView.Adapter<ShowPageAdapter.ViewHolder> {
-    private List<ItemModel> displayedItems; // 当前显示的列表
+    private List<ItemModel> displayedItems;
 
     public ShowPageAdapter(List<ItemModel> itemList) {
-        this.displayedItems = new ArrayList<>(itemList); // 复制列表，避免直接修改原始数据
+        this.displayedItems = new ArrayList<>(itemList);
     }
 
     @NonNull
@@ -37,15 +35,21 @@ public class ShowPageAdapter extends RecyclerView.Adapter<ShowPageAdapter.ViewHo
         holder.imageView.setImageResource(item.getImageResId());
         holder.textView.setText(item.getItemName());
 
-        // 按钮点击事件
         holder.button.setOnClickListener(v -> {
             Context context = holder.itemView.getContext();
             String[] toasts = context.getResources().getStringArray(R.array.option_toasts);
 
             int originalIndex = item.getOriginalIndex();
-            String toastMessage = (originalIndex < toasts.length) ? toasts[originalIndex] : context.getString(R.array.option_toasts);
+            String toastMessage = (originalIndex < toasts.length) ? toasts[originalIndex] : context.getString(R.string.app_name);
 
             Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
+
+            if (context instanceof ShowPageActivity) {
+                ((ShowPageActivity) context).showNotification();
+                Log.d("ShowPageAdapter", "showNotification() called");
+            } else {
+                Log.e("ShowPageAdapter", "Context is not ShowPageActivity");
+            }
         });
     }
 
@@ -54,11 +58,9 @@ public class ShowPageAdapter extends RecyclerView.Adapter<ShowPageAdapter.ViewHo
         return displayedItems.size();
     }
 
-    /** 更新适配器数据 **/
-    @SuppressLint("NotifyDataSetChanged")
     public void updateList(List<ItemModel> newList) {
-        displayedItems = new ArrayList<>(newList); // 重新赋值
-        notifyDataSetChanged(); // 刷新界面
+        displayedItems = new ArrayList<>(newList);
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
